@@ -1,3 +1,8 @@
+@extends('layout')
+@section('title')
+All Books
+@endsection
+@section('content')
 <h1>
     All Books
 </h1>
@@ -10,3 +15,4 @@
 <hr>
 @endforeach
 {{ $books->render() }}
+@endsection
