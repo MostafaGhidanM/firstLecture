@@ -1,0 +1,20 @@
+=Migration
+create tables --> books() 
+=ORM (Object Relational Mapper)
+Old --> SELECT * from books where id > 3;
+Laravel --> Book::where('id','>',3)->get();
+=Template Engine (Blade)
+old:
+<?php if($x == 3){?>
+<h1> <?php echo $x ?> </h1>
+<?php } ?>
+Larave:
+@if($x ==3)
+<h1>{{$x}}</h1>
+@endif
+=Routing
+old: 
+maktaba.com/views/books/index.php
+Laravel
+maktaba.com/books/index
+
