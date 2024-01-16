@@ -16,4 +16,11 @@ class BookController extends Controller
         //dd($books);
         return view('books.index',compact('books'));
     }
+    public function show($id)
+    {
+        //Book::where('id','=',$id)->first();   
+        $book = Book::find($id); 
+        return view('books.show', compact('book'));
+    }
+
 }
