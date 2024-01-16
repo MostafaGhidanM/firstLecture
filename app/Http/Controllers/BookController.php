@@ -9,7 +9,7 @@ class BookController extends Controller
 {
     public function index()
     {
-        $books= Book::get(); //select all
+        $books= Book::paginate(2); //select all
         //$books = Book::select('title','desc')->get();
         //$books = Book::where('id','=>',2)->get();
         //$books = Book::select('title','desc')->where('id','>=',1)->orderBy('id','DESC')->get();

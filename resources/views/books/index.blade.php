@@ -3,7 +3,10 @@
 </h1>
 <hr>
 @foreach ( $books as $book )
-<h3>{{ $book->title }} </h3>   
+<a href="{{ route('books.show',$book->id) }}">
+<h3>{{ $book->title }} </h3>  
+</a> 
 <p>{{ $book->desc }}</p>
 <hr>
 @endforeach
+{{ $books->render() }}
