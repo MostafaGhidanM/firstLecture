@@ -17,4 +17,7 @@ old:
 maktaba.com/views/books/index.php
 Laravel
 maktaba.com/books/index
-
+=Commands:
+php artisan make:migration create_books_table
+php artisan migrate
+php artisan migrate:rollback (undo to latest migration)
