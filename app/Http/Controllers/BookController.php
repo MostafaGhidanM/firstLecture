@@ -19,7 +19,7 @@ class BookController extends Controller
     public function show($id)
     {
         //Book::where('id','=',$id)->first();   
-        $book = Book::find($id); 
+        $book = Book::findOrFail($id); 
         return view('books.show', compact('book'));
     }
 
