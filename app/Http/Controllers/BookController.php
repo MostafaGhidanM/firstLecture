@@ -9,7 +9,7 @@ class BookController extends Controller
 {
     public function index()
     {
-        $books= Book::paginate(2); //select all
+        $books= Book::orderBy('id', 'DESC')->paginate(2); //select all
         //$books = Book::select('title','desc')->get();
         //$books = Book::where('id','=>',2)->get();
         //$books = Book::select('title','desc')->where('id','>=',1)->orderBy('id','DESC')->get();
@@ -25,6 +25,16 @@ class BookController extends Controller
     public function create()
     {
         return view('books.create');
+    }
+    public function store(Request $request)
+    {
+        $title = $request->title;
+        $desc = $request->desc;
+        Book::create([
+            'title' => $title,
+            'desc' => $desc
+        ]);
+        return redirect(route('books.index'));
     }
 
 }
