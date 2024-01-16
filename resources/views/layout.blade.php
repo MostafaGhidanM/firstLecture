@@ -9,8 +9,9 @@
     @yield('styles')
 </head>
 <body>
-
-    @yield('content')
+    <div class="container py-5">
+        @yield('content')
+    </div>
     <script src="{{ asset('js/bootstrap.js') }}"></script>
     <script src="{{ asset('js/jquery-3.7.1.js') }}"></script>
     @yield('scripts')
