@@ -1,5 +1,7 @@
 @extends('layout')
-@section('title', 'Edit Book: '.$book->id )
+@section('title')
+Edit Book {{ $book->id }}
+@endsection
 @section('content')
 @include('inc.errors')
 <form method="POST" action="{{ route('books.update', $book->id) }}">
