@@ -29,6 +29,12 @@ class BookController extends Controller
     }
     public function store(Request $request)
     {
+        //Validation
+        $request->validate(
+            [
+                'title' => 'required | string | max:100',
+                'desc' => 'required | string'
+            ]);
         $title = $request->title;
         $desc = $request->desc;
         Book::create([
