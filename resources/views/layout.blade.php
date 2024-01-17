@@ -10,6 +10,14 @@
     @yield('styles')
 </head>
 <body>
+    <style>
+    body {
+            margin: 0;
+            padding: 0;
+            background-size: cover;
+            background-color: rgba(255, 255, 255, 0.487);
+        }
+    </style>
     <div class="container py-5">
         @yield('content')
     </div>
