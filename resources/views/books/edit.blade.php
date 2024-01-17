@@ -5,7 +5,7 @@ Edit Book {{ $book->id }}
 
 
 @section('content')
-
+@include('inc.errors')
 <form method="POST" action="{{ route('books.update', $book->id) }}">
     @csrf
     <div class="form-group mb-3">
