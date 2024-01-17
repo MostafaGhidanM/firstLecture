@@ -11,7 +11,5 @@ Show A Book
 <hr>
 <div>
     <a href="{{ route('books.index') }}" class="btn btn-primary">Back to All Books</a>
-    <a href="{{ route('books.edit',$book->id) }}" class="btn btn-warning">Edit The Book</a>
-    <a href="" class="btn btn-danger">Delete The Book</a>
 </div>
 @endsection

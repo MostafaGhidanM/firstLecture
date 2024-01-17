@@ -12,10 +12,14 @@ All Books
 <h3>{{ $book->title }} </h3>  
 </a> 
 <p>{{ $book->desc }}</p>
+<div>
+    <a href="{{ route('books.edit',$book->id) }}" class="btn btn-warning">Edit The Book</a>
+    <a href="{{ route('books.delete', $book->id) }}" class="btn btn-danger">Delete The Book</a>
+</div>
 <hr>
 @endforeach
 <div class="form-group mb-3">
-    <a href="{{ route('books.create') }}">Create A Book</a>
+    <a class="btn btn-primary" href="{{ route('books.create') }}">Create A Book</a>
 </div>
 {{ $books->render() }}
 @endsection
