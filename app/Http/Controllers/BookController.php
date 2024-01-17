@@ -42,14 +42,18 @@ class BookController extends Controller
         $book = Book::findOrFail($id); 
         return view('books.edit', compact('book'));
     }
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
         $title = $request->title;
         $desc = $request->desc;
-        Book::where('id','=',$request->id)->update([
+        Book::findOrFail($id)->update([
             'title' => $title,
             'desc' => $desc
         ]);    
+        return redirect(route('books.show',$id));
+    }
+    public function delete($id){
+        Book::findOrFail($id)->delete();
         return redirect(route('books.index'));
     }
 

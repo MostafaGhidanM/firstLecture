@@ -9,5 +9,9 @@ Show A Book
 <h3>{{ $book->title }}</h3>
 <p>{{ $book->desc }}</p>
 <hr>
-<a href="{{ route('books.index') }}">Back to All Books</a>
+<div>
+    <a href="{{ route('books.index') }}" class="btn btn-primary">Back to All Books</a>
+    <a href="{{ route('books.edit',$book->id) }}" class="btn btn-warning">Edit The Book</a>
+    <a href="" class="btn btn-danger">Delete The Book</a>
+</div>
 @endsection

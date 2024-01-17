@@ -14,5 +14,8 @@ All Books
 <p>{{ $book->desc }}</p>
 <hr>
 @endforeach
+<div class="form-group mb-3">
+    <a href="{{ route('books.create') }}">Create A Book</a>
+</div>
 {{ $books->render() }}
 @endsection
