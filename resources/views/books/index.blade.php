@@ -21,5 +21,7 @@ All Books
 <div class="form-group mb-3">
     <a class="btn btn-primary" href="{{ route('books.create') }}">Create A Book</a>
 </div>
-{{ $books->render() }}
+<div class="d-flex justify-content-center">
+    {{ $books->links('pagination::bootstrap-4') }}
+</div>
 @endsection
