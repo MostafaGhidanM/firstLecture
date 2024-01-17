@@ -36,5 +36,21 @@ class BookController extends Controller
         ]);
         return redirect(route('books.index'));
     }
+    public function edit($id)
+    {
+        //Book::where('id','=',$id)->first();   
+        $book = Book::findOrFail($id); 
+        return view('books.edit', compact('book'));
+    }
+    public function update(Request $request)
+    {
+        $title = $request->title;
+        $desc = $request->desc;
+        Book::where('id','=',$request->id)->update([
+            'title' => $title,
+            'desc' => $desc
+        ]);    
+        return redirect(route('books.index'));
+    }
 
 }

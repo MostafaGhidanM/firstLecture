@@ -23,4 +23,8 @@ Route::get('/books/show/{id}',[BookController::class,'show'])->name('books.show'
 //Book Create
 Route::get('/books/create',[BookController::class,'create'])->name('books.create');
 Route::post('/books/store',[BookController::class,'store'])->name('books.store');
+// Book Update
+Route::get('/books/edit/{id}',[BookController::class,'edit'])->name('books.edit');
+Route::post('/books/update',[BookController::class,'update'])->name('books.update');
+
 
