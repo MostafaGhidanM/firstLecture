@@ -1,10 +1,10 @@
 @extends('layout')
 @section('title')
-All Books
+Library
 @endsection
 @section('content')
 <h1>
-    All Books
+    Books
 </h1>
 <hr>
 @foreach ( $books as $book )
