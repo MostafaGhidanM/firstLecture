@@ -11,10 +11,17 @@ Library
         <div class="col-md-4 mb-4">
                 <div class="card d-flex flex-column h-100">
                 <div class="card-body">
-                    <a href="{{ route('books.show', $book->id) }}">
-                        <h3>{{ $book->title }}</h3>
-                    </a>
-                    <p>{{ $book->desc }}</p>
+                    <div class="row">
+                        <div class="col-6">
+                            <a href="{{ route('books.show', $book->id) }}">
+                                <h3>{{ $book->title }}</h3>
+                                <p>{{ $book->desc }}</p>
+                            </a>
+                        </div>
+                        <div class="col-6">
+                            <img src="{{ asset('uploads/books/'.$book->img) }}" alt="{{ $book->name }}" class="img-fluid mb-1">
+                        </div>
+                    </div>
                     <div class="mb-0">
                         <div class="justify-content-between">
                             <a href="{{ route('books.edit', $book->id) }}" class="btn btn-warning">Edit The Book</a>
