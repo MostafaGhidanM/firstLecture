@@ -41,6 +41,7 @@ class BookController extends Controller
         $ext = $img->getClientOriginalExtension();
         $name ="book-". uniqid().".$ext";
         $img->move(public_path('uploads/books'),$name);
+        //////////////////////////////////////
         $title = $request->title;
         $desc = $request->desc;
         Book::create([
@@ -65,6 +66,7 @@ class BookController extends Controller
                 'img' => 'nullable | mimes:png,jpg'
             ]);
         $book= Book::findOrFail($id);
+        //////////////////
         $name= $book->img;
         //move to public/uploads/books
         if($request->hasFile('img')){
