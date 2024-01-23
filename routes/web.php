@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,4 +29,15 @@ Route::get('/books/edit/{id}',[BookController::class,'edit'])->name('books.edit'
 Route::post('/books/update/{id}',[BookController::class,'update'])->name('books.update');
 // Book Delete
 Route::get('/books/delete/{id}',[BookController::class,'delete'])->name('books.delete');
-
+//categories
+//categories Read
+Route::get('/categories',[CategoryController::class,'index'])->name('categories.index');
+Route::get('/categories/show/{id}',[CategoryController::class,'show'])->name('categories.show');
+//categories Create
+Route::get('/categories/create',[CategoryController::class,'create'])->name('categories.create');
+Route::post('/categories/store',[CategoryController::class,'store'])->name('categories.store');
+// categories Update
+Route::get('/categories/edit/{id}',[CategoryController::class,'edit'])->name('categories.edit');
+Route::post('/categories/update/{id}',[CategoryController::class,'update'])->name('categories.update');
+// categories Delete
+Route::get('/categories/delete/{id}',[CategoryController::class,'delete'])->name('categories.delete');
