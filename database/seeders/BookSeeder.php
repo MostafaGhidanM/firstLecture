@@ -17,7 +17,7 @@ class BookSeeder extends Seeder
     public function run(): void
     {
         $faker = Faker::create();
-        for ($i = 0; $i < 100; $i++) { // Adjust the loop count based on your needs
+        for ($i = 0; $i < 10; $i++) { // Adjust the loop count based on your needs
             Book::create([
                 'title' => $faker->word,
                 'desc' => $faker->sentence,

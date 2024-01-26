@@ -3,13 +3,29 @@
 Show A Book
 @endsection
 @section('content')
-<h1>
-    Chosen Book ID : {{$book->id}}
-</h1>
-<h3>{{ $book->title }}</h3>
-<p>{{ $book->desc }}</p>
-<hr>
-<div>
-    <a href="{{ route('books.index') }}" class="btn btn-primary">Back to All Books</a>
-</div>
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-body">
+            <h3>
+                {{ $book->title }}
+            </h3>
+            <p>
+                {{ $book->desc }}
+            </p>
+            @foreach ($book->categories as $category )
+            <h4>
+                {{ $category->name }}
+            </h4>    
+            @endforeach
+            <hr>
+            <div>
+              <a href="{{ route('books.index') }}" class="btn btn-primary">Back</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 @endsection

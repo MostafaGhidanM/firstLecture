@@ -22,6 +22,11 @@ Library
                             <h3 class="card-title">{{ $book->title }}</h3>
                         </a>
                         <p class="card-text">{{ $book->desc }}</p>
+                        @foreach ($book->categories as $category)
+                        <p class="card-text" style="color: red">
+                            {{ $category->name }}
+                        </p>
+                        @endforeach
                     </div>
                 </div>
                 <div class="row mt-auto">

@@ -20,8 +20,8 @@ return new class extends Migration
             $table->string('title',100);
             $table->text('desc');
             $table->string('img',100)->nullable();
-            $table->timestamps();
-        });
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();        });
     }
 
     /**
