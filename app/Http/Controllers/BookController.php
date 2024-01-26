@@ -31,22 +31,20 @@ class BookController extends Controller
                 'desc' => 'required | string',
                 'img' => 'nullable | mimes:jpg,png'
             ]);
+        $title = $request->title;
+        $desc = $request->desc;
         //move to public/uploads/books
         if ($request->hasFile('img')){
             $img = $request->file('img');
             $ext = $img->getClientOriginalExtension();
             $name ="Book-".time().".$ext";
             $img->move(public_path('uploads/books'),$name);
-            $title = $request->title;
-            $desc = $request->desc;
             Book::create([
                 'title' => $title,
                 'desc' => $desc,
                 'img' => $name,
             ]);
         }else{
-            $title = $request->title;
-            $desc = $request->desc;
             Book::create([
                 'title' => $title,
                 'desc' => $desc,
@@ -68,14 +66,13 @@ class BookController extends Controller
                 'img' => 'nullable | mimes:png,jpg'
             ]);
         $book= Book::findOrFail($id);
-        //////////////////
         $name= $book->img;
+        $title = $request->title;
+        $desc = $request->desc;
         //in case of edit the image
         if($request->hasFile('img') && $name !== null ){
             $img = $request->file('img');
             $img->move(public_path('uploads/books'),$name);
-            $title = $request->title;
-            $desc = $request->desc;
             $book->update([
                 'title' => $title,
                 'desc' => $desc,
@@ -87,8 +84,6 @@ class BookController extends Controller
             $ext = $img->getClientOriginalExtension();
             $name ="Book-".time().".$ext";
             $img->move(public_path('uploads/books'),$name);
-            $title = $request->title;
-            $desc = $request->desc;
             $book->update([
                 'title' => $title,
                 'desc' => $desc,
@@ -96,8 +91,6 @@ class BookController extends Controller
             ]); 
         // in case of just edit name and description 
         }else{
-            $title = $request->title;
-            $desc = $request->desc;
             $book->update([
                 'title' => $title,
                 'desc' => $desc,
