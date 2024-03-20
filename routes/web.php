@@ -67,3 +67,7 @@ Route::get('/books/show/{id}', [BookController::class, 'show'])->name('books.sho
 //categories Read
 Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
 Route::get('/categories/show/{id}', [CategoryController::class, 'show'])->name('categories.show');
+
+//GitHub
+Route::get('/login/github', [AuthController::class, 'redirectToProvider'])->name('auth.github.redirect');
+Route::get('/login/github/callback', [AuthController::class, 'handleProviderCallback'])->name('auth.github.callback');
