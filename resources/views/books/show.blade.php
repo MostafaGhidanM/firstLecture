@@ -14,11 +14,13 @@ Show A Book
             <p>
                 {{ $book->desc }}
             </p>
+            <ul>
             @foreach ($book->categories as $category )
-            <h4>
+            <li>
                 {{ $category->name }}
-            </h4>    
+            </li>    
             @endforeach
+          </ul>
             <hr>
             <div>
               <a href="{{ route('books.index') }}" class="btn btn-primary">Back</a>

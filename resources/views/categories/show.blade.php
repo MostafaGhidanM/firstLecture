@@ -15,6 +15,15 @@ Show A Category
               Category Name: {{ $category->name }}
             </h3>
             <hr>
+            <h3>Books: </h3>
+            <ul>
+              @foreach ($category->books as $book )
+              <li>
+                {{ $book->title }}
+              </li>
+                
+              @endforeach
+            </ul>
             <div>
               <a href="{{ route('categories.index') }}" class="btn btn-primary">Back</a>
             </div>
