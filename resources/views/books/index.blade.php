@@ -3,6 +3,9 @@
     Library
 @endsection
 @section('content')
+    {{-- <input type="text" id="keyword">
+    <br>
+    <br> --}}
     @auth
         <div class="container">
             @if (!Auth::user()->notes->isEmpty())
@@ -87,3 +90,23 @@
     </div>
 
 @endsection
+{{-- @section('scripts')
+    <script>
+        $('#keyword').keyup(function() {
+            let keyword = $(this).val()
+            let url = "{{ route('books.search') }}" + "?keyword=" + keyword
+
+            $.ajax({
+                type: "GET",
+                url: url,
+                contentType: false,
+                processData: false,
+                success: function(data) {
+                    for (book of data) {
+
+                    }
+                }
+            })
+        })
+    </script>
+@endsection --}}

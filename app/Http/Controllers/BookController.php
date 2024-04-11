@@ -11,7 +11,7 @@ class BookController extends Controller
 {
     public function index()
     {
-        $books = Book::orderBy('id', 'DESC')->paginate(6);
+        $books = Book::orderBy('id', 'DESC')->paginate('6');
         return view('books.index', compact('books'));
     }
     public function show($id)
@@ -32,8 +32,8 @@ class BookController extends Controller
                 'title' => 'required | string | max:100',
                 'desc' => 'required | string',
                 'img' => 'nullable | mimes:jpg,png',
-                'category_ids' => 'required',
-                'category_ids.*' => 'exists:categories,id'
+                // 'category_ids' => 'required',
+                // 'category_ids.*' => 'exists:categories,id'
             ]
         );
         $title = $request->title;
@@ -121,5 +121,11 @@ class BookController extends Controller
         }
         $book->delete();
         return back();
+    }
+    public function search(Request $request)
+    {
+        $keyword = $request->keyword;
+        $books =  Book::where('title', 'like', "%$keyword%")->get();
+        return response()->json($books);
     }
 }
