@@ -34,7 +34,7 @@ class ApiBookController extends Controller
             'title' => 'required | string | max:100',
             'desc' => 'required | string',
             'img' => 'required | mimes:jpg,png',
-            'category_ids' => 'required',
+            // 'category_ids' => 'required',
             'category_ids.*' => 'exists:categories,id'
         ]);
         if ($validator->fails()) {

@@ -62,12 +62,14 @@ class ApiAuthController extends Controller
         $user->update([
             'access_token' => $new_access_token,
         ]);
-        return response()->json($new_access_token);
+        return response()->json([
+            'token' => $new_access_token
+        ]);
     }
     public function logout(Request $request)
     {
-        $access_token = $request->access_token;
-        $user = User::where('access_token', $access_token)->first();
+        $token = $request->input('token');
+        $user = User::where('access_token', $token)->first();
         if ($user == null) {
             $error = 'token not correct';
             return response()->json($error);
