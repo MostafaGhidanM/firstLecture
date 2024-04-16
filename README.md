@@ -12,7 +12,7 @@ This project is a Laravel-based backend API for managing a library system. It pr
 
 ### Installation
 1. Clone the repository to your local machine:
-git clone https://github.com/MostafaGhidanM/library
+git clone https://github.com/MostafaGhidanM/library-Backend
 
 2. Navigate to the project directory:
 cd library
